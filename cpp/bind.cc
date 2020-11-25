@@ -1,4 +1,5 @@
 // document: https://emscripten.org/docs/porting/connecting_cpp_and_javascript/embind.html
+// memory model doc: https://www.cntofu.com/book/150/zh/ch2-c-js/ch2-03-mem-model.md
 #include <stddef.h>
 #include <vector>
 #include <string>
