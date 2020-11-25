@@ -55,8 +55,14 @@ void setMemoryPtr(Memory &mem, val ptr) {
 }
 
 void FillMemory(Memory mem) {
-  for (size_t i = 0; i < mem.len; i++) {
-    mem.ptr[i] = i;
+//  for (size_t i = 0; i < mem.len; i++) {
+//    mem.ptr[i] = i;
+//  }
+
+  for (uint64_t i = 0; i < mem.len; i += 8) {
+    *(uint64_t*)(mem.ptr + i) =
+      i | (i + 1) << 8 | (i + 2) << 16 | (i + 3) << 24 |
+      (i + 4) << 32 | (i + 5) << 40 | (i + 6) << 48 | (i + 7) << 56;
   }
 }
 
